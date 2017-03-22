@@ -19,34 +19,36 @@ def toyWorld():
         s1[i] = s1[i].replace(",", " ")
         s1[i] = s1[i].split(" ")
         print(s1)
-        if "on" in s1[i]:
+
+    for a in range(length_of_list):
+        if s1[a] == "on":
             # identifies which element is ON which element
             global elem1
             global elem2
-            elem1 = s1[i][i+1] # this is A (elem1)
-            elem2 = s1[i][i+2] # A is on this(elem2)
+            elem1 = s1[a][a+1] # this is A (elem1)
+            elem2 = s1[a][a+2] # A is on this(elem2)
             final.append(elem1)
             final.append(elem2) # added to final list in order of ON
             print(final, "this is final")
             print(elem1,"> is On > ", elem2)
-        if "clear" in s1[i]:
+        if "clear" in s1[a]:
             # identifies which element is CLEAR on top
             global clearElem
-            clearElem = s1[i][i]
+            clearElem = s1[a][a]
             print(clearElem, "is clear")
     for j in range(length_of_goal):
         g0split[j] = g0split[j].replace("(", " ")
-        g0split[j] = g0split[j].replace(")", " ")
+        g0split[j] = g0split[j].replace(")", "")
         g0split[j] = g0split[j].replace(",", " ")
         g0split[j] = g0split[j].split(" ")
         print(g0split)
-        if "on" in g0split[j]:
+        if g0split[j] == "on":
             global goalOn1
             global goalOn2
             goalOn1 = g0split[j][j+1]
             goalOn2 = g0split[j][j+2]
-            if goalOn2 == clearElem:
-                print("CAN DO IT")
+            # if goalOn2 == clearElem:
+                # print("CAN DO IT")
     copyS0.append(spltStr)
     g1split.append(elem1)
     # print(copyS0)
