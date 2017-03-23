@@ -32,11 +32,12 @@ def toyWorld():
             final.append(elem2) # added to final list in order of ON
             print(final, "this is final")
             print(elem1,"> is On > ", elem2)
+            elem3 = elem2
 
         if s1[a][0] == "clear":
             # identifies which element is CLEAR on top
             global clearElem
-            clearElem = s1[a][a]
+            clearElem = s1[a][1]
             print(clearElem, "is clear")
 
     for j in range(length_of_goal):
@@ -54,6 +55,10 @@ def toyWorld():
             goalOn2 = g0split[b][2]
             # if goalOn2 == clearElem:
                 # print("CAN DO IT")
+            # else:
+                # print("no")
+            print("Move(", goalOn1, elem3, goalOn2,")")
+
     print(final)
     print(set(final))
     copyS0.append(spltStr)
