@@ -18,10 +18,9 @@ def toyWorld():
         s1[i] = s1[i].replace(")", "")
         s1[i] = s1[i].replace(",", " ")
         s1[i] = s1[i].split(" ")
-        print(s1)
+        # print(s1)
 
     for a in range(length_of_list):
-        print(s1[a], "--")
         if s1[a][0] == "on":
             # identifies which element is ON which element
             global elem1
@@ -30,15 +29,15 @@ def toyWorld():
             elem2 = s1[a][2] # A is on this(elem2)
             final.append(elem1)
             final.append(elem2) # added to final list in order of ON
-            print(final, "this is final")
-            print(elem1,"> is On > ", elem2)
+            # print(final, "this is final")
+            # print(elem1,"> is On > ", elem2)
             # elem3 = elem2
 
         if s1[a][0] == "clear":
             # identifies which element is CLEAR on top
             global clearElem
             clearElem = s1[a][1]
-            print(clearElem, "is clear")
+            # print(clearElem, "is clear")
 
     for j in range(length_of_goal):
         g0split[j] = g0split[j].replace("(", " ")
@@ -58,17 +57,17 @@ def toyWorld():
                 # print("CAN DO IT")
             # else:
                 # print("no")
-        print("Move(", goalOn1, elem2, goalOn2,")")
-
-    print(final)
-    print(set(final))
-    copyS0.append(spltStr)
-    g1split.append(elem1)
-    # print(copyS0)
-    empty = "empty"
-    for i in range(len(g0split)):
-        if g0split[i] == copyS0[0]:
-            g0split[i] = empty
+            for a in range(length_of_list):
+                if s1[a][0] == "on":
+                    if s1[a][1] == goalOn1:
+                        # identifies which element is ON which element
+                        global search1
+                        global search2
+                        search1 = s1[a][1]  # this is A (elem1)
+                        search2 = s1[a][2]  # A is on this(elem2)
+        # print(final, "FINAL")
+        # print("Move(", goalOn1,",", search2, ",", goalOn2,")")
+        print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 
 def isGoal(node):
     if str(node) == goal:
