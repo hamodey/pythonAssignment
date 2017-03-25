@@ -34,5 +34,10 @@ CLEAR(table1) CLEAR(A)
 
 Move(A, table1, table2)
 
+a b p1 p2 t1 t2 t3
+
+clear(p2) on(p2,a) on(a,t2) on(t2,b) clear(t1) clear(p1) heavier(a,p2) heavier(t2,a) heavier(b,p2) heavier(p1,p2) heavier(t1,a) heavier(p1,t2)
+
+on(p2,a) on(a,t2) on(t2,p1)
 
 A B C D E F TABLE1 TABLE2 TABLE3 TABLE4 TABLE5

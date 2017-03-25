@@ -10,10 +10,10 @@ copyS0 = []
 final = []
 length_of_list = len(s1)
 length_of_goal = len(g0split)
-elem1 = 0
 
 def toyWorld():
     for i in range(length_of_list):
+        # Sn state is split into a list for search
         s1[i] = s1[i].replace("(", " ")
         s1[i] = s1[i].replace(")", "")
         s1[i] = s1[i].replace(",", " ")
@@ -29,9 +29,6 @@ def toyWorld():
             elem2 = s1[a][2] # A is on this(elem2)
             final.append(elem1)
             final.append(elem2) # added to final list in order of ON
-            # print(final, "this is final")
-            # print(elem1,"> is On > ", elem2)
-            # elem3 = elem2
 
         if s1[a][0] == "clear":
             # identifies which element is CLEAR on top
@@ -40,6 +37,8 @@ def toyWorld():
             # print(clearElem, "is clear")
 
     for j in range(length_of_goal):
+        # goal state being split into a list for the search
+
         g0split[j] = g0split[j].replace("(", " ")
         g0split[j] = g0split[j].replace(")", "")
         g0split[j] = g0split[j].replace(",", " ")
@@ -47,26 +46,22 @@ def toyWorld():
         # print(g0split)
 
     for b in range(length_of_goal):
+        global goalOn1
+        global goalOn2
         if "on" in g0split[b]:
-            # elem3 = elem2
-            global goalOn1
-            global goalOn2
-            goalOn1 = g0split[b][1]
+            goalOn1 = g0split[b][1] # splits the entities on which is ON
             goalOn2 = g0split[b][2]
-            # if goalOn2 == clearElem:
-                # print("CAN DO IT")
-            # else:
-                # print("no")
             for a in range(length_of_list):
+                global search1
+                global search2
                 if s1[a][0] == "on":
                     if s1[a][1] == goalOn1:
                         # identifies which element is ON which element
-                        global search1
-                        global search2
                         search1 = s1[a][1]  # this is A (elem1)
                         search2 = s1[a][2]  # A is on this(elem2)
-        # print(final, "FINAL")
-        # print("Move(", goalOn1,",", search2, ",", goalOn2,")")
+        if "clear" in g0split[b]:
+            print(g0split[b])
+        # Printing the move operator
         print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 
 def isGoal(node):
@@ -92,6 +87,6 @@ def generateChild(t):
 
 def main():
     toyWorld()
-    generateChild(copyS0)
+    # generateChild(copyS0)
 
 main()
