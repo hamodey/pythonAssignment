@@ -59,8 +59,17 @@ def toyWorld():
                         # identifies which element is ON which element
                         search1 = s1[a][1]  # this is A (elem1)
                         search2 = s1[a][2]  # A is on this(elem2)
+        global goalClr
         if "clear" in g0split[b]:
-            print(g0split[b])
+            # print(g0split[b])
+            goalClr = g0split[b][1]
+            search2 = goalClr
+            print(g0split[b][1])
+            for c in range(length_of_list):
+                if s1[a][0] == "on":
+                    if s1[a][2] == goalClr:
+                        goalOn1 = s1[a][1]  # this is A (elem1)
+                        goalOn2 = "test"
         # Printing the move operator
         print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 
