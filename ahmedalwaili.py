@@ -23,10 +23,8 @@ def toyWorld():
     for a in range(length_of_list):
         if s1[a][0] == "on":
             # identifies which element is ON which element
-            global elem1
-            global elem2
             elem1 = s1[a][1] # this is A (elem1)
-            elem2 = s1[a][2] # A is on this(elem2)
+            elem2 = s1[a][2] # A is on this(elem2) on(elem1,elem2)
             final.append(elem1)
             final.append(elem2) # added to final list in order of ON
 
@@ -50,7 +48,7 @@ def toyWorld():
         global goalOn2
         if "on" in g0split[b]:
             goalOn1 = g0split[b][1] # splits the entities on which is ON
-            goalOn2 = g0split[b][2]
+            goalOn2 = g0split[b][2] # on(goalOn1, goalOn2) on(s[a][1],
             for a in range(length_of_list):
                 global search1
                 global search2
@@ -59,17 +57,20 @@ def toyWorld():
                         # identifies which element is ON which element
                         search1 = s1[a][1]  # this is A (elem1)
                         search2 = s1[a][2]  # A is on this(elem2)
+        ############
         global goalClr
         if "clear" in g0split[b]:
             # print(g0split[b])
+            notIn = [item for item in spltStr if item not in final]
+            # x for x in a if x not in [2, 3, 7]
             goalClr = g0split[b][1]
             search2 = goalClr
-            print(g0split[b][1])
+            # print(g0split[b][1])
             for c in range(length_of_list):
-                if s1[a][0] == "on":
-                    if s1[a][2] == goalClr:
-                        goalOn1 = s1[a][1]  # this is A (elem1)
-                        goalOn2 = "test"
+                if s1[c][0] == "on":
+                    if s1[c][2] == goalClr:
+                        goalOn1 = s1[c][1]  # this is A (elem1)
+                        goalOn2 = notIn[c]
         # Printing the move operator
         print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 
