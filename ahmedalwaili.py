@@ -71,6 +71,7 @@ def toyWorld():
                     if s1[c][2] == goalClr:
                         goalOn1 = s1[c][1]  # this is A (elem1)
                         goalOn2 = notIn[c]
+
         # Printing the move operator
         print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 
