@@ -65,13 +65,16 @@ def toyWorld():
             # x for x in a if x not in [2, 3, 7]
             goalClr = g0split[b][1]
             search2 = goalClr
-            # print(g0split[b][1])
+            print(notIn, "NOT IN ")
             for c in range(length_of_list):
                 if s1[c][0] == "on":
                     if s1[c][2] == goalClr:
                         goalOn1 = s1[c][1]  # this is A (elem1)
-                        goalOn2 = notIn[c]
-
+                        # goalOn2 = notIn[c]
+                        if notIn == []:
+                            goalOn2 = g0split[2]
+                        else:
+                            goalOn2 = notIn[c]
         # Printing the move operator
         print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 

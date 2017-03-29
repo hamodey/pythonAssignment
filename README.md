@@ -44,12 +44,23 @@ a b p1 p2 t1 t2 t3
 clear(p2) on(p2,a) on(a,t2) on(t2,b) clear(t1) clear(p1) heavier(a,p2) heavier(t2,a) heavier(b,p2) heavier(p1,p2) heavier(t1,a) heavier(p1,t2)
 on(p2,a) on(a,t2) on(t2,p1)
 
-Move(P2, A, P1)
-Move(A, T2, T1)
-Move(P2, P1, A)
-Move(T2, B, P1)
-Move(P2, A, B)
-Move(A, T1, T2)
-Move(P2, B, A)
+Move(P2, A, P1) x
+Move(A, T2, T1) x
+Move(P2, P1, A) x
+Move(T2, B, P1) √√√√√
+Move(P2, A, B)  x
+Move(A, T1, T2) x
+Move(P2, B, A)  x 
 
 A B C D E F TABLE1 TABLE2 TABLE3 TABLE4 TABLE5
+
+a b c t1 t2
+
+clear(b) on(b,c) on(c,a) on(a,t1) clear(t1) clear(t2) heavier(b,a) heavier (c,b) heavier(t1,b) heavier(t2,c)
+
+on(a,b) on(b,c) on(c,t2)
+
+Move(b,c,t1) xxxxxxx
+Move(c,a,t2) √√√√√√√
+Move(b,t1,c) xxxxxxx
+Move(a,t1,b) √√√√√√√
