@@ -65,7 +65,7 @@ def toyWorld():
             # x for x in a if x not in [2, 3, 7]
             goalClr = g0split[b][1]
             search2 = goalClr
-            print(notIn, "NOT IN ")
+            # print(notIn, "NOT IN ")
             for c in range(length_of_list):
                 if s1[c][0] == "on":
                     if s1[c][2] == goalClr:
@@ -78,29 +78,7 @@ def toyWorld():
         # Printing the move operator
         print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))
 
-def isGoal(node):
-    if str(node) == goal:
-        return True
-    else:
-        return False
-
-
-def generateChild(t):
-    for i in t:
-        if isinstance(i, list):
-            if len(i) <= 0:  # empty list
-                print("Empty List")
-                return False
-            else:
-                generateChild(i)
-        else:
-            anw = isGoal(i)
-            if anw:
-                print(i)
-                break
-
 def main():
     toyWorld()
-    # generateChild(copyS0)
 
 main()

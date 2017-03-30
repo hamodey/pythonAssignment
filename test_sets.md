@@ -53,7 +53,7 @@ MOVE(Box,Table1,Tree)  xxxx
 MOVE(Shoe,Toy,Table1)   xxxx
 MOVE(Toy,Table2,Box) √√√√√√√√√
 MOVE(Shoe,Table1,Toy) xxxx
-
+ 
 Run adds:
 MOVE(Shoe,Toy,Table1)
 MOVE(Shoe,Table1,Toy)

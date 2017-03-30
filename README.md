@@ -19,8 +19,8 @@ TABLE1 TABLE2 A |ON(A, table1) HEAVIER(table1, A)                           |   
                 |   HEAVIER(table2, A) CLEAR(A) CLEAR(table2)|CLEAR(table1) |                       |
                 |       CLEAR(A)|Move(A, table1, table2)                    | ON(A,TABLE1) CLEAR(B) | MOVE(A,B,TABLE1)
 
-A B C
 ON(A,B) CLEAR(C)
+A B C
 ON(A,C) CLEAR(B)
 MOVE(A,B,C) √√√√√√√√√√√√√√√
 
