@@ -1,6 +1,6 @@
 objStr = str(input("Input all your objects: ")) # input of all the objects
 spltStr = objStr.split(" ") # objects split into a list to navigate through
-print("Here you can see your objects: ", spltStr)
+#  print("Here you can see your objects: ", spltStr)
 s0 = input("Please describe your initial state: ").lower() # input of the current stat
 s1 = s0.split(" ") # splits the instial state to navigate through and search
 goal = input("Input your goal: ").lower()
@@ -28,7 +28,7 @@ def toyWorld():
             elem2 = s1[a][2]  # A is on this(elem2) on(elem1,elem2)
             final.append(elem1)
             final.append(elem2)  # added to final list in order of ON
-                                 # this will be used to test weather a table is empty or not
+# this will be used to test weather a table is empty or not
 
         if s1[a][0] == "clear":
             # identifies which element is CLEAR on top
@@ -64,7 +64,8 @@ def toyWorld():
         global goalClr
         if "clear" in g0split[b]:  # searches for the clear in the first dimension
             # print(g0split[b])
-            notIn = [item for item in spltStr if item not in final]  # checks with the final list to see weather something is empty or not (like table2 in the assignment page2)
+            notIn = [item for item in spltStr if item not in final]  # checks with the final list to see weather
+            # something is empty or not (like table2 in the assignment page2)
             # x for x in a if x not in [2, 3, 7]
             goalClr = g0split[b][1]
             search2 = goalClr  # where its moving from
@@ -79,7 +80,8 @@ def toyWorld():
                         else:
                             goalOn2 = notIn[c]
         # Printing the move operator
-        print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))  # formatting of the Move operator to loop via the list and print any movement and changes in goalOn1 goalOn2 and search2
+        print("Move( %s, %s, %s)" % (goalOn1, search2, goalOn2))  # formatting of the Move operator to loop via the list
+        #  and print any movement and changes in goalOn1 goalOn2 and search2
 
 def main():
     toyWorld()
